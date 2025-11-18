@@ -14,23 +14,17 @@
  * limitations under the License.
  */
 
-resource "google_filestore_instance" "default" {
-  project      = var.project_id
-  name         = var.instance_name
-  location     = var.location
-  tier         = var.tier
-  protocol     = var.protocol
-  kms_key_name = var.kms_key_name
+output "instance_id" {
+  description = "The fully qualified ID of the Filestore instance."
+  value       = module.filestore_instance.instance_id
+}
 
-  file_shares {
-    capacity_gb        = var.capacity_gb
-    name               = var.share_name
-    nfs_export_options = var.nfs_export_options
-  }
+output "instance_name" {
+  description = "The name of the Filestore instance."
+  value       = module.filestore_instance.instance_name
+}
 
-  networks {
-    network      = var.network
-    modes        = var.network_modes
-    connect_mode = var.connect_mode
-  }
+output "instace_ip_address" {
+  description = "The IP address of the Filestore instance."
+  value       = module.filestore_instance.instance_ip_address
 }

@@ -1,4 +1,4 @@
-module github.com/terraform-google-modules/{{cookiecutter.module_name}}/test/integration
+module github.com/terraform-google-modules/cloud-filestore/test/integration
 
 go 1.21
 

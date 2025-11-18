@@ -28,3 +28,8 @@ output "instance_ip_address" {
   description = "The IP address of the Filestore instance."
   value       = google_filestore_instance.default.networks[0].ip_addresses[0]
 }
+
+output "kms_key_name" {
+  description = "The KMS key used for the Filestore instance."
+  value       = google_filestore_instance.default.kms_key_name
+}

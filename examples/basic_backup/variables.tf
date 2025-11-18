@@ -7,23 +7,13 @@
  *
  *      http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * Unless required by applicable lawAS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
 
-terraform {
-  required_version = ">= 1.3"
-  required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = ">= 3.53, < 7"
-    }
-  }
-
-  provider_meta "google" {
-    module_name = "blueprints/terraform/cloud-filestore/v0.0.1"
-  }
+variable "project_id" {
+  description = "The ID of the project in which the resource belongs."
+  type        = string
 }
