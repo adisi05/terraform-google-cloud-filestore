@@ -16,15 +16,25 @@
 
 output "instance_id" {
   description = "The fully qualified ID of the Filestore instance."
-  value       = module.filestore_instance.instance_id
+  value       = module.google_filestore_instance.instance_id
 }
 
 output "instance_name" {
   description = "The name of the Filestore instance."
-  value       = module.filestore_instance.instance_name
+  value       = module.google_filestore_instance.instance_name
 }
 
 output "instace_ip_address" {
   description = "The IP address of the Filestore instance."
-  value       = module.filestore_instance.instance_ip_address
+  value       = module.google_filestore_instance.instance_ip_address
+}
+
+output "project_id" {
+  description = "The ID of the project in which the resource belongs."
+  value       = var.project_id
+}
+
+output "instance_location" {
+  description = "The location of the Filestore instance."
+  value       = module.google_filestore_instance.location
 }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+*      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -38,4 +38,14 @@ output "source_instance_name" {
 output "instance_ip_address" {
   description = "The IP address of the Filestore instance."
   value       = module.google_filestore_instance.instance_ip_address
+}
+
+output "project_id" {
+  description = "The ID of the project in which the resource belongs."
+  value       = var.project_id
+}
+
+output "instance_location" {
+  description = "The location of the Filestore instance."
+  value       = module.google_filestore_instance.location
 }

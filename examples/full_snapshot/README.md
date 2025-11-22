@@ -7,17 +7,20 @@ This example illustrates how to create a Filestore Regional instance and a snaps
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| project_id | The ID of the project in which the resource belongs. | `string` | n/a | yes |
+| project\_id | The ID of the project in which the resource belongs. | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| instance_ip_address | The IP address of the Filestore instance. |
-| snapshot_id | The fully qualified ID of the Filestore snapshot. |
-| snapshot_location | The location of the Filestore snapshot. |
-| snapshot_name | The name of the Filestore snapshot. |
-| source_instance_name | The name of the source Filestore instance for the snapshot. |
+| instance\_ip\_address | The IP address of the Filestore instance. |
+| instance\_location | The location of the Filestore instance. |
+| project\_id | The ID of the project in which the resource belongs. |
+| snapshot\_id | The fully qualified ID of the Filestore snapshot. |
+| snapshot\_location | The location of the Filestore snapshot. |
+| snapshot\_name | The name of the Filestore snapshot. |
+| source\_instance\_name | The name of the source Filestore instance for the snapshot. |
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Usage

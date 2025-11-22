@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-module "google_filestore_instance" "default" {
+module "google_filestore_instance" {
   source = "../.."
 
   project_id    = var.project_id
@@ -39,7 +39,4 @@ module "google_filestore_instance" "default" {
       anon_gid    = 456
     }
   ]
-  network       = "default"
-  network_modes = ["MODE_IPV4"]
-  connect_mode  = "DIRECT_PEERING"
 }

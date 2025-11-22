@@ -110,29 +110,24 @@ Functional examples are included in the
 | connect\_mode | The network connect mode of the Filestore instance. | `string` | `"DIRECT_PEERING"` | no |
 | instance\_name | The name of the Filestore instance. The name must be unique within the specified instance. | `string` | n/a | yes |
 | kms\_key\_name | The resource name of the KMS key to be used for data encryption. | `string` | `null` | no |
-| location | The location for the Filestore instance. | `string` | n/a | yes |
+| location | The location for the Filestore instance. Can be a zone or a region, depends on the tier. | `string` | n/a | yes |
 | network | The name of the network to which the Filestore instance is connected. | `string` | `"default"` | no |
-| network\_modes | The IP versions for the network. Examples include MODE_IPV4, MODE_IPV6. | `list(string)` | `["MODE_IPV4"]` | no |
-| nfs\_export\_options | NFS export options for the file share. | `list(object)` | `[]` | no |
+| network\_modes | The IP versions for the network. Examples include MODE\_IPV4, MODE\_IPV6. | `list(string)` | <pre>[<br>  "MODE_IPV4"<br>]</pre> | no |
+| nfs\_export\_options | NFS export options for the file share. | <pre>list(object({<br>    ip_ranges   = list(string)<br>    access_mode = string<br>    squash_mode = string<br>    anon_uid    = number<br>    anon_gid    = number<br>  }))</pre> | `[]` | no |
 | project\_id | The ID of the project in which the resource belongs. | `string` | n/a | yes |
 | protocol | The file protocol of the Filestore instance. | `string` | `"NFS_V3"` | no |
 | share\_name | The name of the file share. | `string` | `"share1"` | no |
-| tier | The service tier of the instance. Examples include BASIC_HDD, BASIC_SSD, ZONAL, REGIONAL, ENTERPRISE. | `string` | `"ZONAL"` | no |
+| tier | The service tier of the instance. Examples include BASIC\_HDD, BASIC\_SSD, ZONAL, REGIONAL, ENTERPRISE. | `string` | `"ZONAL"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| backup\_id | The fully qualified ID of the Filestore backup. |
-| backup\_location | The location of the Filestore backup. |
-| backup\_name | The name of the Filestore backup. |
 | instance\_id | The fully qualified ID of the Filestore instance. |
 | instance\_ip\_address | The IP address of the Filestore instance. |
 | instance\_name | The name of the Filestore instance. |
-| kms\_key\_name | The KMS key used for the Filestore instance. |
-| snapshot\_id | The fully qualified ID of the Filestore snapshot. |
-| snapshot\_location | The location of the Filestore snapshot. |
-| snapshot\_name | The name of the Filestore snapshot. |
+| kms\_key\_name | The name of the KMS key used to encrypt the Filestore instance. |
+| location | The location of the Filestore instance. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

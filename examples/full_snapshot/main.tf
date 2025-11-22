@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-module "google_filestore_instance" "default" {
+module "google_filestore_instance" {
   source = "../.."
 
   project_id    = var.project_id
@@ -23,17 +23,15 @@ module "google_filestore_instance" "default" {
   tier          = "REGIONAL"
   capacity_gb   = 1024
   share_name    = "share1"
-  network       = "default"
-  network_modes = ["MODE_IPV4"]
 }
 
 resource "google_filestore_snapshot" "default" {
   project     = var.project_id
-  name        = "terraform-blueprint-snapshot-full"
+  name        = "terraform-blueprint-full-snapshot"
   instance    = module.google_filestore_instance.instance_name
   location    = "us-central1"
   description = "This is a test snapshot."
   labels = {
-    "my_label"    = "value"
+    "my_label" = "value"
   }
 }

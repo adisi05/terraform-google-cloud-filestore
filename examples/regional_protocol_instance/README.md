@@ -5,17 +5,19 @@ This example provisions a Google Cloud Filestore Regional instance configured to
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
-| Name            | Description                         | Type         | Default                 | Required |
-| --------------- | ----------------------------------- | ------------ | ----------------------- | :------: |
-| `project_id` | The ID of the project in which the resource belongs. | `string` | n/a | yes |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| project\_id | The ID of the project in which the resource belongs. | `string` | n/a | yes |
 
 ## Outputs
 
-| Name                 | Description                                    |
-| -------------------- | ---------------------------------------------- |
-| `instance_id`  | The fully qualified ID of the Filestore instance. |
-| `instance_name`  | The name of the Filestore instance. |
-| `instance_ip_address` | The IP address of the Filestore instance.      |
+| Name | Description |
+|------|-------------|
+| instance\_id | The fully qualified ID of the Filestore instance. |
+| instance\_ip\_address | The IP address of the Filestore instance. |
+| instance\_location | The location of the Filestore instance. |
+| instance\_name | The name of the Filestore instance. |
+| project\_id | The ID of the project in which the resource belongs. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

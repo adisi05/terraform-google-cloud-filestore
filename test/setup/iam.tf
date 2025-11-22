@@ -16,9 +16,14 @@
 
 locals {
   int_required_roles = [
-    "roles/owner"
+    "roles/file.editor",
+    "roles/cloudkms.admin",
+    "roles/iam.serviceAccountAdmin",
+    "roles/serviceusage.serviceUsageAdmin",
+    "roles/resourcemanager.projectIamAdmin"
   ]
 }
+
 
 resource "google_service_account" "int_test" {
   project      = module.project.project_id

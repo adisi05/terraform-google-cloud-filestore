@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-module "google_filestore_instance" "default" {
+module "google_filestore_instance" {
   source = "../.."
 
   project_id    = var.project_id
@@ -24,18 +24,29 @@ module "google_filestore_instance" "default" {
   kms_key_name  = google_kms_crypto_key.filestore_key.id
   capacity_gb   = 1024
   share_name    = "share1"
-  network       = "default"
-  network_modes = ["MODE_IPV4"]
+}
+
+resource "random_id" "keyring_suffix" {
+  byte_length = 4
 }
 
 resource "google_kms_key_ring" "filestore_keyring" {
   project  = var.project_id
-  name     = "filestore-keyring"
+  name     = "filestore-keyring-${random_id.keyring_suffix.hex}"
   location = "us-central1"
 }
 
 resource "google_kms_crypto_key" "filestore_key" {
-  project  = var.project_id
   name     = "filestore-key"
   key_ring = google_kms_key_ring.filestore_keyring.id
+}
+
+data "google_project" "project" {
+  project_id = var.project_id
+}
+
+resource "google_kms_crypto_key_iam_member" "filestore_key_iam" {
+  crypto_key_id = google_kms_crypto_key.filestore_key.id
+  role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+  member        = "serviceAccount:service-${data.google_project.project.number}@cloud-filer.iam.gserviceaccount.com"
 }

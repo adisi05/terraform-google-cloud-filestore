@@ -16,20 +16,30 @@
 
 output "instance_id" {
   description = "The fully qualified ID of the Filestore instance."
-  value       = google_filestore_instance.default.id
+  value       = module.google_filestore_instance.instance_id
 }
 
 output "instance_name" {
   description = "The name of the Filestore instance."
-  value       = google_filestore_instance.default.name
+  value       = module.google_filestore_instance.instance_name
 }
 
 output "instance_ip_address" {
   description = "The IP address of the Filestore instance."
-  value       = google_filestore_instance.default.networks[0].ip_addresses[0]
+  value       = module.google_filestore_instance.instance_ip_address
 }
 
 output "kms_key_name" {
   description = "The KMS key used for the Filestore instance."
-  value       = google_filestore_instance.default.kms_key_name
+  value       = module.google_filestore_instance.kms_key_name
+}
+
+output "project_id" {
+  description = "The ID of the project in which the resource belongs."
+  value       = var.project_id
+}
+
+output "instance_location" {
+  description = "The location of the Filestore instance."
+  value       = module.google_filestore_instance.location
 }

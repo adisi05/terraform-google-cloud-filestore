@@ -23,9 +23,18 @@ resource "google_filestore_instance" "default" {
   kms_key_name = var.kms_key_name
 
   file_shares {
-    capacity_gb        = var.capacity_gb
-    name               = var.share_name
-    nfs_export_options = var.nfs_export_options
+    capacity_gb = var.capacity_gb
+    name        = var.share_name
+    dynamic "nfs_export_options" {
+      for_each = var.nfs_export_options
+      content {
+        ip_ranges   = nfs_export_options.value["ip_ranges"]
+        access_mode = nfs_export_options.value["access_mode"]
+        squash_mode = nfs_export_options.value["squash_mode"]
+        anon_uid    = nfs_export_options.value["anon_uid"]
+        anon_gid    = nfs_export_options.value["anon_gid"]
+      }
+    }
   }
 
   networks {

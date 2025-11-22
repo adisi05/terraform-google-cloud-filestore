@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-module "google_filestore_instance" "default" {
+module "google_filestore_instance" {
   source = "../.."
 
   project_id    = var.project_id
@@ -23,8 +23,6 @@ module "google_filestore_instance" "default" {
   tier          = "ZONAL"
   capacity_gb   = 1024
   share_name    = "share1"
-  network       = "default"
-  network_modes = ["MODE_IPV4"]
 }
 
 resource "google_filestore_backup" "default" {
