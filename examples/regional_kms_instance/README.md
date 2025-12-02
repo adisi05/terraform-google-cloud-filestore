@@ -18,7 +18,9 @@ This example demonstrates how to create a Google Cloud Filestore Regional instan
 | instance\_location | The location of the Filestore instance. |
 | instance\_name | The name of the Filestore instance. |
 | kms\_key\_name | The KMS key used for the Filestore instance. |
+| mount\_point | The mount point of the Filestore instance. |
 | project\_id | The ID of the project in which the resource belongs. |
+| share\_name | The name of the file share. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

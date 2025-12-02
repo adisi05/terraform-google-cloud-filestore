@@ -33,6 +33,12 @@ spec:
         connect_mode:
           name: connect_mode
           title: Connect Mode
+        create_backup:
+          name: create_backup
+          title: Create Backup
+        create_snapshot:
+          name: create_snapshot
+          title: Create Snapshot
         instance_name:
           name: instance_name
           title: Instance Name

@@ -15,7 +15,9 @@ This example illustrates how to create a Filestore Regional instance and a basic
 |------|-------------|
 | instance\_ip\_address | The IP address of the Filestore instance. |
 | instance\_location | The location of the Filestore instance. |
+| mount\_point | The mount point of the Filestore instance. |
 | project\_id | The ID of the project in which the resource belongs. |
+| share\_name | The name of the file share. |
 | snapshot\_id | The fully qualified ID of the Filestore snapshot. |
 | snapshot\_location | The location of the Filestore snapshot. |
 | snapshot\_name | The name of the Filestore snapshot. |

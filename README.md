@@ -108,6 +108,8 @@ Functional examples are included in the
 |------|-------------|------|---------|:--------:|
 | capacity\_gb | The capacity of the file share in gigabytes. | `number` | `1024` | no |
 | connect\_mode | The network connect mode of the Filestore instance. | `string` | `"DIRECT_PEERING"` | no |
+| create\_backup | Whether to create a Filestore backup. | `bool` | `false` | no |
+| create\_snapshot | Whether to create a Filestore snapshot. | `bool` | `false` | no |
 | instance\_name | The name of the Filestore instance. The name must be unique within the specified instance. | `string` | n/a | yes |
 | kms\_key\_name | The resource name of the KMS key to be used for data encryption. | `string` | `null` | no |
 | location | The location for the Filestore instance. Can be a zone or a region, depends on the tier. | `string` | n/a | yes |
@@ -116,8 +118,8 @@ Functional examples are included in the
 | nfs\_export\_options | NFS export options for the file share. | <pre>list(object({<br>    ip_ranges   = list(string)<br>    access_mode = string<br>    squash_mode = string<br>    anon_uid    = number<br>    anon_gid    = number<br>  }))</pre> | `[]` | no |
 | project\_id | The ID of the project in which the resource belongs. | `string` | n/a | yes |
 | protocol | The file protocol of the Filestore instance. | `string` | `"NFS_V3"` | no |
-| share\_name | The name of the file share. | `string` | `"share1"` | no |
-| tier | The service tier of the instance. Examples include BASIC\_HDD, BASIC\_SSD, ZONAL, REGIONAL, ENTERPRISE. | `string` | `"ZONAL"` | no |
+| share\_name | The name of the file share. | `string` | `"vol1"` | no |
+| tier | The service tier of the instance. Examples include BASIC\_HDD, BASIC\_SSD, ZONAL, REGIONAL, ENTERPRISE. | `string` | `"REGIONAL"` | no |
 
 ## Outputs
 
@@ -128,6 +130,8 @@ Functional examples are included in the
 | instance\_name | The name of the Filestore instance. |
 | kms\_key\_name | The name of the KMS key used to encrypt the Filestore instance. |
 | location | The location of the Filestore instance. |
+| mount\_point | The mount point of the Filestore instance. |
+| share\_name | The name of the file share. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

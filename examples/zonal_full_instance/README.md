@@ -17,7 +17,9 @@ This example provisions a zonal Google Cloud Filestore instance with multiple NF
 | instance\_ip\_address | The IP address of the Filestore instance. |
 | instance\_location | The location of the Filestore instance. |
 | instance\_name | The name of the Filestore instance. |
+| mount\_point | The mount point of the Filestore instance. |
 | project\_id | The ID of the project in which the resource belongs. |
+| share\_name | The name of the file share. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

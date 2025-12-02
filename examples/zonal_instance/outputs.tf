@@ -24,7 +24,7 @@ output "instance_name" {
   value       = module.google_filestore_instance.instance_name
 }
 
-output "instace_ip_address" {
+output "instance_ip_address" {
   description = "The IP address of the Filestore instance."
   value       = module.google_filestore_instance.instance_ip_address
 }
