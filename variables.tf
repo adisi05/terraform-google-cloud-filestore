@@ -88,3 +88,15 @@ variable "protocol" {
   type        = string
   default     = "NFS_V3"
 }
+
+variable "create_snapshot" {
+  description = "Whether to create a Filestore snapshot."
+  type        = bool
+  default     = false
+}
+
+variable "create_backup" {
+  description = "Whether to create a Filestore backup."
+  type        = bool
+  default     = false
+}
